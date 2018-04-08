@@ -38,9 +38,9 @@ function addelem(id,type,add){
     }
     ELEMENT[id]=document.createElement(args['tag']);
     ELEMENT[id].setAttribute('id',id);
-    ELEMENT[id].onclick=args['onclick'];
-    ELEMENT[id].onmouseover=args['onmouseover'];
-    ELEMENT[id].ondblclick=args['ondblclick'];
+    //ELEMENT[id].onclick=args['onclick'];
+    //ELEMENT[id].onmouseover=args['onmouseover'];
+    //ELEMENT[id].ondblclick=args['ondblclick'];
 
     for(key in args){
       ELEMENT[id][key]=args[key];

@@ -1,6 +1,6 @@
 
 elem("body").style.backgroundColor="#efefef";
-addstyle(".material",{position:"absolute","background-color":"#fff",padding:"10px","box-shadow":"0px 0px 20px rgba(0,0,0,0.3)",left:"0%",top:"0%",zIndex:"0"});
+addstyle(".material",{overflow:"hidden",position:"absolute","background-color":"#fff",padding:"10px","box-shadow":"0px 0px 20px rgba(0,0,0,0.3)",left:"0%",top:"0%",zIndex:"0"});
 
 function material(id,args){
   args['className']="material";
