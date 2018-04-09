@@ -4,8 +4,15 @@
 <title>
 
 </title>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <style>
-
+body{
+  font-family: 'Ubuntu', sans-serif;
+  font-size:3vmin;
+}
+p{
+  font-size:150%;
+}
 </style>
 </head>
 <body>
@@ -22,10 +29,10 @@
 <!--End Loading of Libraries-->
 
 <script>
-elem("body")["font-size"]="3vh";
+elem("body")["font-size"]="10vh";
 addstyle("a",{color:"black"});
 addstyle(".menu",{color:"black",cursor:"pointer",display:"inline-block","padding-right":"20px","text-decoration":"underline"});
-var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"50%",top:"50%",zIndex:"10",width:"70%",height:"30%","padding-left":"30px"}});
+var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"50%",top:"50%",zIndex:"10",width:"70%",height:"30vh","padding-left":"30px"}});
   head.move(0,0,0);
   head.addchild("home","h2",{innerHTML:"Home",className:"menu"});
   head.addchild("doc","h2",{innerHTML:"Documentation",className:"menu"});
@@ -59,40 +66,42 @@ var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"5
   head.contribute.onclick=function(){
     redirectnew("https://github.com/dingojs/dingojs.github.io");
   }
-var banner=addelem("banner",material,{innerHTML:"<h1>Welcome to the Modern Web</h1>",style:{left:"50%",top:"100%",zIndex:"100",width:"60%","padding-left":"30px","text-align":"center"}});
-banner.move(5,37,0);
+var banner=addelem("banner",material,{innerHTML:"<h1>Welcome to the Modern Web</h1>",style:{left:"50%",top:"100%",zIndex:"100",width:"60%",height:"15vh","padding-left":"30px","text-align":"center"}});
+  banner.move(5,37,0);
 var dingo=addelem("img",material,{innerHTML:"<img src='dingo.jpg' style='width:100%;border-radius:50%;'>",style:{width:"15%",left:"0%",top:"60%"}});
-dingo.move(79,0,0);
+  dingo.move(79,0,0);
 var content=addelem("content",material,{innerHTML:"<p>Dingo.js is a versatile web framework that is guaranteed to improve your workflow. You can control all components of your web app from within client-side Javscript and it is easily extendable to meet all of your developement needs. Best of all it can be embedded using a single script tag!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
-content.addchild("fheader","h2",{innerHTML:"Dingo.js Template",style:{"text-decoration":"underline"}});
-content.addchild("framework","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
-content.move(5,60,0);
+  content.addchild("fheader","h2",{innerHTML:"Dingo.js Template",style:{"text-decoration":"underline"}});
+  content.addchild("framework","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
+  content.move(5,60,0);
 var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created comprehensive documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
 var download=addelem("download",material,{innerHTML:"<h2>Setup</h2><p>We recommend simply linking to our external code stored on github using the following method:</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
+download.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quot;https://dingojs.github.io/dingo.js&quot;&gt;&lt;/script&gt;"});
 
+if(landscape()){
 var side=addelem("side",material,{innerHTML:"",style:{left:"0%",top:"0%",zIndex:"10",width:"21%","padding-left":"30px","text-align":"center"}});
-side.addchild("home","h2",{innerHTML:"Home",style:{"text-decoration":"underline"}});
-side.addchild("docs","h2",{innerHTML:"Documentation",style:{"text-decoration":"underline"}});
-side.addchild("0","h3",{innerHTML:"Elements"});
-side.addchild("1","h3",{innerHTML:"Models"});
-side.addchild("2","h3",{innerHTML:"Styles"});
-side.addchild("3","h3",{innerHTML:"Hello World!"});
+  side.addchild("home","h2",{innerHTML:"Home",style:{"text-decoration":"underline"}});
+  side.addchild("docs","h2",{innerHTML:"Documentation",style:{"text-decoration":"underline"}});
+  side.addchild("0","h3",{innerHTML:"Elements"});
+  side.addchild("1","h3",{innerHTML:"Models"});
+  side.addchild("2","h3",{innerHTML:"Styles"});
+  side.addchild("3","h3",{innerHTML:"Hello World!"});
 
-side.addchild("tutorial","h2",{innerHTML:"Tutorial",style:{"text-decoration":"underline"}});
+  side.addchild("tutorial","h2",{innerHTML:"Tutorial",style:{"text-decoration":"underline"}});
 
-side.addchild("0","h3",{innerHTML:"Hello World!"}).onclick=function(){move()};
-side.addchild("1","h3",{innerHTML:"Transitions"});
-side.addchild("2","h3",{innerHTML:"Hello World!"});
-side.addchild("3","h3",{innerHTML:"Social Media Profile"});
-side.addchild("4","h3",{innerHTML:"Interactive Emoji"});
-side.addchild("5","h3",{innerHTML:"Material Library"});
+  side.addchild("0","h3",{innerHTML:"Hello World!"}).onclick=function(){move()};
+  side.addchild("1","h3",{innerHTML:"Transitions"});
+  side.addchild("2","h3",{innerHTML:"Hello World!"});
+  side.addchild("3","h3",{innerHTML:"Social Media Profile"});
+  side.addchild("4","h3",{innerHTML:"Interactive Emoji"});
+  side.addchild("5","h3",{innerHTML:"Material Library"});
 
-side.addchild("setup","h2",{innerHTML:"Setup",style:{"text-decoration":"underline"}});
-side.addchild("libraries","h2",{innerHTML:"Libraries",style:{"text-decoration":"underline"}});
+  side.addchild("setup","h2",{innerHTML:"Setup",style:{"text-decoration":"underline"}});
+  side.addchild("libraries","h2",{innerHTML:"Libraries",style:{"text-decoration":"underline"}});
 
-side.move(71,40,0);
-
-docs.addchild("addelemh","h2",{innerHTML:"Initialize Dingo.js"});
+  side.move(71,40,0);
+}
+docs.addchild("null","h2",{innerHTML:"Initialize Dingo.js"});
 docs.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quot;https://dingojs.github.io/dingo.js&quot;&gt;&lt;/script&gt;"});
 docs.addchild("null","h2",{innerHTML:"Terms:"});
 docs.addchild("null","p",{innerHTML:"Dingo.js is easy to understand once you understand the various terms and their use cases."});
@@ -111,6 +120,7 @@ function menu(id,args){
   }
   return menu;
 }
+
 function code(id,args){
   args.style["width"]="80%";
   args.style["padding"]="10px";

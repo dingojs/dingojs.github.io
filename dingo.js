@@ -118,19 +118,11 @@ function addstyle(name,css){
 //................GUI..................//
 //-------------------------------------//
 function landscape(){
-  if(window.innerWidth>window.innerHeight){
-    return true;
-  }else{
-    return false;
-  }
+  return (window.innerWidth>window.innerHeight);
 }
 
 function portrait(){
-  if(window.innerWidth>window.innerHeight){
-    return true;
-  }else{
-    return false;
-  }
+  return (window.innerWidth>window.innerHeight);
 }
 
 function browserwidth(){
