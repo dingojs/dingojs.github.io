@@ -122,7 +122,7 @@ function landscape(){
 }
 
 function portrait(){
-  return (window.innerWidth>window.innerHeight);
+  return (window.innerWidth<window.innerHeight);
 }
 
 function browserwidth(){

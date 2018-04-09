@@ -30,10 +30,15 @@ p{
 <!--End Loading of Libraries-->
 
 <script>
-elem("body")["font-size"]="10vh";
+
+var width=60;
+if(portrait()){
+  width=87;
+}
+console.log(width);
 addstyle("a",{color:"black"});
 addstyle(".menu",{color:"black",cursor:"pointer",display:"inline-block","padding-right":"20px","text-decoration":"underline"});
-var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"50%",top:"50%",zIndex:"10",width:"70%",height:"30vh","padding-left":"30px"}});
+var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"50%",top:"50%",zIndex:"10",width:width+10+"%",height:"30vh","padding-left":"30px"}});
   head.move(0,0,0);
   head.addchild("home","h2",{innerHTML:"Home",className:"menu"});
   head.addchild("doc","h2",{innerHTML:"Documentation",className:"menu"});
@@ -67,16 +72,16 @@ var head=addelem("header",material,{innerHTML:"<h1>Dingo.js</h1>",style:{left:"5
   head.contribute.onclick=function(){
     redirectnew("https://github.com/dingojs/dingojs.github.io");
   }
-var banner=addelem("banner",material,{innerHTML:"<h1>Welcome to the Modern Web</h1>",style:{left:"50%",top:"100%",zIndex:"100",width:"60%",height:"15vh","padding-left":"30px","text-align":"center"}});
+var banner=addelem("banner",material,{innerHTML:"<h1>Welcome to the Modern Web</h1>",style:{left:"50%",top:"100%",zIndex:"100",width:width+"%",height:"15vh","padding-left":"30px","text-align":"center"}});
   banner.move(5,37,0);
 var dingo=addelem("img",material,{innerHTML:"<img src='dingo.jpg' style='width:100%;border-radius:50%;'>",style:{width:"15%",left:"0%",top:"60%"}});
   dingo.move(79,0,0);
-var content=addelem("content",material,{innerHTML:"<p>Dingo.js is a versatile web framework that is guaranteed to improve your workflow. You can control all components of your web app from within client-side Javscript and it is easily extendable to meet all of your developement needs. Best of all it can be embedded using a single script tag!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
+var content=addelem("content",material,{innerHTML:"<p>Dingo.js is a versatile web framework that is guaranteed to improve your workflow. You can control all components of your web app from within client-side Javscript and it is easily extendable to meet all of your developement needs. Best of all it can be embedded using a single script tag!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
   content.addchild("fheader","h2",{innerHTML:"Dingo.js Template",style:{"text-decoration":"underline"}});
   content.addchild("framework","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
   content.move(5,60,0);
-var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
-var download=addelem("download",material,{innerHTML:"<h2>Setup</h2><p>We recommend simply linking to our external code stored on github using the following method:</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
+var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
+var download=addelem("download",material,{innerHTML:"<h2>Setup</h2><p>We recommend simply linking to our external code stored on github using the following method:</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
 download.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quot;https://dingojs.github.io/dingo.js&quot;&gt;&lt;/script&gt;"});
 
 if(landscape()){
