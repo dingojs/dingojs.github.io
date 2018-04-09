@@ -11,6 +11,7 @@ body{
   font-size:3vmin;
 }
 p{
+  text-align:left;
   font-size:150%;
 }
 </style>
@@ -74,7 +75,7 @@ var content=addelem("content",material,{innerHTML:"<p>Dingo.js is a versatile we
   content.addchild("fheader","h2",{innerHTML:"Dingo.js Template",style:{"text-decoration":"underline"}});
   content.addchild("framework","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
   content.move(5,60,0);
-var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created comprehensive documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
+var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
 var download=addelem("download",material,{innerHTML:"<h2>Setup</h2><p>We recommend simply linking to our external code stored on github using the following method:</p>",style:{left:"0%",top:"100%",zIndex:"10",width:"60%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
 download.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quot;https://dingojs.github.io/dingo.js&quot;&gt;&lt;/script&gt;"});
 
@@ -87,7 +88,7 @@ var side=addelem("side",material,{innerHTML:"",style:{left:"0%",top:"0%",zIndex:
   side.addchild("2","h3",{innerHTML:"Styles"});
   side.addchild("3","h3",{innerHTML:"Hello World!"});
 
-  side.addchild("tutorial","h2",{innerHTML:"Tutorial",style:{"text-decoration":"underline"}});
+  side.addchild("tutorial","h2",{innerHTML:"Examples",style:{"text-decoration":"underline"}});
 
   side.addchild("0","h3",{innerHTML:"Hello World!"}).onclick=function(){move()};
   side.addchild("1","h3",{innerHTML:"Transitions"});
@@ -109,9 +110,29 @@ docs.addchild("null","p",{innerHTML:"<u>Element-</u> an element is the basic str
 docs.addchild("null","p",{innerHTML:"<u>Style-</u> a style is exactly what it sounds like, a list of css attributes that can be applied to multiple elements."});
 docs.addchild("null","p",{innerHTML:"<u>Model-</u>a function that creates an element with certain styling and attributes. Used as a template for batch creating elements."});
 
-docs.addchild("addelemh","h2",{innerHTML:"Create an Element"});
-docs.addchild("addelem",code,{innerHTML:"addelem(id,type,args);"});
-docs.addchild("addelemd","p",{innerHTML:"-"})
+docs.addchild("null","h2",{innerHTML:"Create an Element"});
+docs.addchild("null",code,{innerHTML:"addelem(id,type,args);"});
+docs.addchild("null","p",{innerHTML:"<u>id(string)-</u> the id of the element"});
+docs.addchild("null","p",{innerHTML:"<u>type(string/func)-</u> the type of the element. If a string, it refrences an html tag such as &lt;h1&gt;. If a func name, the type will be determined by the model under the same name."});
+docs.addchild("null","p",{innerHTML:"<u>args(arr)-</u> an associative array of properties and their values to apply to the element"});
+docs.addchild("null","p",{innerHTML:"The element creator also returns a function, so you can refrence it like this:"});
+docs.addchild("null",code,{innerHTML:"var test=addelem('test','h1',{innerHTML:'Hello World!',style:{color:'red'}});"});
+docs.addchild("null",code,{innerHTML:"test.style.color='blue';//changes the color"});
+
+docs.addchild("null","h2",{innerHTML:"Create a Style"});
+docs.addchild("null",code,{innerHTML:"addstyle(id,args);"});
+docs.addchild("null","p",{innerHTML:"<u>id(string)-</u> the id of the element"});
+docs.addchild("null","p",{innerHTML:"<u>args(arr)-</u> an associative array of properties and their values to add to an element type or a class."});
+docs.addchild("null","p",{innerHTML:"A style works exactly how css works. If there is a '.' before the name in the id, it will create a class. If not, it will reference an html tag:"});
+docs.addchild("null",code,{innerHTML:"addstyle('.test',{color:'blue'});//creates a css class called .test that sets the text color of all elements with that class"});
+docs.addchild("null",code,{innerHTML:"addstyle('h1',{'background-color':'red');//sets the color of all &lt;h1&gt; tags"});
+docs.addchild("null",code,{innerHTML:"addelem('test','h1',{innerHTML:'Hello World!',className:'test');//renders blue with red background"});
+
+docs.addchild("null","h2",{innerHTML:"Create a Model"});
+docs.addchild("null",code,{innerHTML:"function model(id,args){<br>}"});
+docs.addchild("null","p",{innerHTML:"<u>id(string)-</u> the id of the element"});
+docs.addchild("null","p",{innerHTML:"<u>args(arr)-</u> an associative array of properties and their values to add to an element type or a class."});
+docs.addchild("null","p",{innerHTML:"A style works exactly how css works. If there is a '.' before the name in the id, it will create a class. If not, it will reference an html tag:"});
 
 function menu(id,args){
   var menu=addelem(id,"div",args);
@@ -122,9 +143,9 @@ function menu(id,args){
 }
 
 function code(id,args){
-  args.style["width"]="80%";
+  args.style["width"]="90%";
   args.style["padding"]="10px";
-  args.style["margin-left"]="10%";
+  args.style["margin-left"]="3%";
   args.style["border-left"]="3px #5b8ecc solid";
   args.style["background-color"]="#efefef";
   args.style["font-family"]="monospace";
