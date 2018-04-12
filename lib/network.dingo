@@ -1,6 +1,0 @@
-function redirect(url){
-  window.location.href=url;
-}
-function redirectnew(url){
-  window.open(url, '_blank');
-}
