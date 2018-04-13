@@ -117,7 +117,7 @@ var dingo=addelem("img",material,{innerHTML:"<img src='dingo.jpg' style='width:1
   dingo.move(79,0,0);
 var content=addelem("content",material,{innerHTML:"<p>Dingo.js is a versatile web framework that is guaranteed to improve your workflow. You can control all components of your web app from within client-side Javscript and it is easily extendable to meet all of your developement needs. Best of all it can be embedded using a single script tag!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
   content.addchild("fheader","h2",{innerHTML:"Dingo.js Template",style:{"text-decoration":"underline"}});
-  content.addchild("fheader","h2",{innerHTML:"You can simply open the CodePen below and beginning using the Dingo.js framework!"});
+  content.addchild("fheader","h2",{innerHTML:"You can simply open the CodePen below and begin using the Dingo.js framework!"});
   content.addchild("framework","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
   content.move(5,60,0);
 var docs=addelem("docs",material,{innerHTML:"<h2>Documentation</h2><p>We've created documentation that will teach you topics ranging from simple uses to creating your own models and libraries. Best of all, we even have interactive examples hosted by Codepen!</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
@@ -126,7 +126,7 @@ download.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quo
 download.addchild("null","p",{innerHTML:"This ensures your code base will always be up to date, but if you are worried about latency or verioning, you can install on your server or local environment using the following:"});
 download.addchild("null","h2",{innerHTML:"<u>Installation Instructions</u>"})
 download.addchild("null","p",{innerHTML:"1. Go to <a href='https://github.com/dingojs/dingo.js' target='_blank'>https://github.com/dingojs/dingo.js</a><br>2. Click Clone/Download -> Download ZIP<br>3. Place the unzipped files in your main directory"});
-var exp=addelem("exp",material,{innerHTML:"<h2>Examples</h2><p>Follow along in these example to learn the basics of Dingo.js. The embedded Codepen projects can be edited and come preloaded with the full Dingo.js package.</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
+var exp=addelem("exp",material,{innerHTML:"<h2>Examples</h2><p>Follow along in these examples to learn the basics of Dingo.js. The embedded Codepen projects can be edited and come preloaded with the full Dingo.js package.</p>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
 exp.addchild("0","h2",{innerHTML:"Hello World!"}).onclick=function(){exphello();};
 exp.addchild("1","h2",{innerHTML:"Transitions"}).onclick=function(){exptrans();};
 exp.addchild("2","h2",{innerHTML:"Functions"}).onclick=function(){expfunc();};
@@ -150,8 +150,12 @@ var side=addelem("side",material,{innerHTML:"",style:{left:"0%",top:"0%",zIndex:
   side.addchild("4","h3",{innerHTML:"Model- Emoji"}).onclick=function(){expemoji();};
 
   side.addchild("setup","h2",{innerHTML:"Setup",style:{"text-decoration":"underline"}}).onclick=function(){menusetup();};
+  side.addchild("wiki","h2",{innerHTML:"<a href='https://github.com/dingojs/dingo.js/wiki' target='_blank'>Wiki</a>"});
+
   side.move(71,40,0);
 }
+
+docs.addchild("null","h3",{innerHTML:"Please visit the <a target='_blank' href='https://github.com/dingojs/dingo.js/wiki'>Wiki</a> for more comprehensive documentation."});
 docs.addchild("null","h2",{innerHTML:"This Documentation is a reference for the base framework, but we recommend following the Examples to learn!"});
 
 docs.addchild("null","h2",{innerHTML:"Initialize Dingo.js"});
@@ -165,11 +169,13 @@ docs.addchild("null","p",{innerHTML:"<u>Model-</u>a function that creates an ele
 docs.addchild("null","h2",{innerHTML:"Create an Element"});
 docs.addchild("null",code,{innerHTML:"addelem(id,type,args);"});
 docs.addchild("null","p",{innerHTML:"<u>id(string)-</u> the id of the element"});
-docs.addchild("null","p",{innerHTML:"<u>type(string/func)-</u> the type of the element. If a string, it refrences an html tag such as &lt;h1&gt;. If a func name, the type will be determined by the model under the same name."});
+docs.addchild("null","p",{innerHTML:"<u>type(string/func)-</u> the type of the element. If a string, it references an html tag such as &lt;h1&gt;. If a func name, the type will be determined by the model under the same name."});
 docs.addchild("null","p",{innerHTML:"<u>args(arr)-</u> an associative array of properties and their values to apply to the element"});
-docs.addchild("null","p",{innerHTML:"The element constructor also returns a function, so you can refrence it like this:"});
+docs.addchild("null","p",{innerHTML:"The element constructor also returns a function, so you can reference it like this:"});
 docs.addchild("null",code,{innerHTML:"var test=addelem('test','h1',{innerHTML:'Hello World!',style:{color:'red'}});"});
 docs.addchild("null",code,{innerHTML:"test.style.color='blue';//changes the color"});
+docs.addchild("null","p",{innerHTML:"Another useful way to add elements is to add a child element to an existing element."});
+docs.addchild("null",code,{innerHTML:"var test=addelem('test','div',{style:{'background-color':'blue'});<br>test.addchild('child','h1',{innerHTML:'Hello World!'};<br>test.child.style.color='red';//changes the color"});
 
 docs.addchild("null","h2",{innerHTML:"Create a Style"});
 docs.addchild("null",code,{innerHTML:"addstyle(id,args);"});
@@ -189,11 +195,11 @@ docs.addchild("null","p",{innerHTML:"A model is a template for elements. Each mo
 docs.addchild("null","h2",{innerHTML:"Libraries"});
 docs.addchild("embedcode",code,{parent:"docs",innerHTML:"&lt;script src=&quot;/lib/library.dingo&quot;&gt;&lt;/script&gt;"});
 docs.addchild("null","p",{innerHTML:"Libraries are a collection of models and functions that make coding easier. Simply embed them in a script tag below Dingo.js and use the functions and models provided in their docs."});
-docs.addchild("null","h3",{innerHTML:"We will be adding Library Documentation shortly..."});
+docs.addchild("null","h3",{innerHTML:"Please visit the <a target='_blank' href='https://github.com/dingojs/dingo.js/wiki'>Wiki</a> for documentation about specific libraries."});
 
 var helloworld=addelem("helloworld",material,{innerHTML:"<h2>Hello World!</h2>",style:{display:"none",left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
 helloworld.addchild("exp","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/NYEyxW/?height=279&theme-id=dark&default-tab=result,js&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
-helloworld.addchild("desc","p",{innerHTML:"In this example, we simply create an element using the addelem function. The first property is the id, which lets us refrence the element later on. The second argument is the type. We've set this to h1 because we want our element to be a header. The third argument is the args for the element. You can think of these as CSS properties that are applied to our element. We set the innerHTML property in order to add text to our element."})
+helloworld.addchild("desc","p",{innerHTML:"In this example, we simply create an element using the addelem function. The first property is the id, which lets us reference the element later on. The second argument is the type. We've set this to h1 because we want our element to be a header. The third argument is the args for the element. You can think of these as CSS properties that are applied to our element. We set the innerHTML property in order to add text to our element."})
 
 var transitions=addelem("trans",material,{innerHTML:"<h2>Transitions</h2>",style:{display:"none",left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center"}});
 transitions.addchild("exp","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/LdoPwy/?height=265&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
@@ -201,11 +207,11 @@ transitions.addchild("desc","p",{innerHTML:"Elements can be modified using norma
 
 var funcexp=addelem("func",material,{innerHTML:"<h2>Functions & Events</h2>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center","display":"none"}});
 funcexp.addchild("exp","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/ZxNEzG/?height=265&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
-funcexp.addchild("desc","p",{innerHTML:"You can assign any arbitrary function to an element as shown above. In this example, we add to function events, for when the element is clicked and when the element is hovered. Various properties are chanegd when these are triggered."})
+funcexp.addchild("desc","p",{innerHTML:"You can assign any arbitrary function to an element as shown above. In this example, we add two function events, for when the element is clicked and when the element is hovered. Various properties are chanegd when these are triggered."})
 
 var profile=addelem("profile",material,{innerHTML:"<h2>Basic Model-Profile Implementation</h2>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center","display":"none"}});
-profile.addchild("exp","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"//codepen.io/zakerytclarke/embed/aYrbzB/?height=265&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
-profile.addchild("desc","p",{innerHTML:"Models are probaly the most useful part of Dingo.js. When creating html, you often create many elements that all have similar properties, and the only solution to this is to copy and paste. In Dingo.js, you can create a model which implements all the necessary child elements, functions and properties, making it easy to create multiple elements of the same type. In this example we make a basic layout that has a picture and a name for a profile. We only provide the model with a name property and a picture property, and the rest of the rendering is completed for us. The type is set to 'profile' because that is the model we are using. The Dingo.js constructor calls the model function profile() to render the elements. All model functions must have id,args as the function arguments. These arguments can then be modified and then used to create elements and child elements. It is always important to return the refrence to the top level element of the model."})
+profile.addchild("exp","iframe",{height:"279",scrolling:"no",title:"Dingo.js Template",src:"https://codepen.io/zakerytclarke/embed/aYrbzB/?height=265&theme-id=dark&default-tab=js,result&embed-version=2",allowfullscreen:"true",style:{width:"100%"}});
+profile.addchild("desc","p",{innerHTML:"Models are probaly the most useful part of Dingo.js. When creating html, you often create many elements that all have similar properties, and the only solution to this is to copy and paste. In Dingo.js, you can create a model which implements all the necessary child elements, functions and properties, making it easy to create multiple elements of the same type. In this example we make a basic layout that has a picture and a name for a profile. We only provide the model with a name property and a picture property, and the rest of the rendering is completed for us. The type is set to 'profile' because that is the model we are using. The Dingo.js constructor calls the model function profile() to render the elements. All model functions must have id,args as the function arguments. These arguments can then be modified and then used to create elements and child elements. It is always important to return the reference to the top level element of the model."})
 
 
 var emoji=addelem("emoji",material,{innerHTML:"<h2>Interactive Emoji Model</h2>",style:{left:"0%",top:"100%",zIndex:"10",width:width+"%","min-height":"100vh","padding-left":"30px","text-align":"center",display:"none"}});
